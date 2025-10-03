@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal AI Assistant</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@400;500;600;700&family=Sora:wght@400;500;600;700&family=Urbanist:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              inter: ['Inter', 'sans-serif'],
+              sora: ['Sora', 'sans-serif'],
+              manrope: ['Manrope', 'sans-serif'],
+              urbanist: ['Urbanist', 'sans-serif'],
+            },
+            keyframes: {
+              'fade-in': {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              'slide-fade-in': {
+                '0%': { opacity: '0', transform: 'translateX(10px)' },
+                '100%': { opacity: '1', transform: 'translateX(0)' },
+              },
+              'slide-up': {
+                '0%': { transform: 'translateY(20px)', opacity: '0' },
+                '100%': { transform: 'translateY(0)', opacity: '1' },
+              },
+              'scale-in': {
+                '0%': { transform: 'scale(0.95)', opacity: '0' },
+                '100%': { transform: 'scale(1)', opacity: '1' },
+              },
+              'star-move': {
+                'from': { transform: 'translate(0, 0)' },
+                'to': { transform: 'translate(-25%, -25%)' },
+              },
+              'twinkle': {
+                '0%, 100%': { opacity: 0.7 },
+                '50%': { opacity: 1 },
+              },
+              'pulse-glow': {
+                '0%, 100%': {
+                  boxShadow: '0 0 15px 5px rgba(var(--accent-color), 0.3), 0 0 30px 10px rgba(var(--accent-color), 0.2)',
+                  transform: 'scale(1)',
+                },
+                '50%': {
+                  boxShadow: '0 0 25px 10px rgba(var(--accent-color), 0.4), 0 0 50px 20px rgba(var(--accent-color), 0.2)',
+                  transform: 'scale(1.02)',
+                }
+              },
+              'listening-pulse': {
+                '0%': { transform: 'scale(1)', opacity: '0.6' },
+                '50%': { transform: 'scale(1.05)', opacity: '1' },
+                '100%': { transform: 'scale(1)', opacity: '0.6' },
+              },
+              'speaking-ripple': {
+                  '0%': { transform: 'scale(0.8)', opacity: '0.8' },
+                  '100%': { transform: 'scale(1.4)', opacity: '0' },
+              },
+              'rainbow-gradient': {
+                '0%': { backgroundPosition: '0% 50%' },
+                '50%': { backgroundPosition: '100% 50%' },
+                '100%': { backgroundPosition: '0% 50%' },
+              }
+            },
+            animation: {
+              'fade-in': 'fade-in 0.5s ease-out forwards',
+              'slide-fade-in': 'slide-fade-in 0.4s ease-out forwards',
+              'slide-up': 'slide-up 0.5s ease-out forwards',
+              'scale-in': 'scale-in 0.3s ease-out forwards',
+              'star-move': 'star-move linear infinite',
+              'twinkle': 'twinkle 3s ease-in-out infinite alternate',
+              'pulse-glow': 'pulse-glow 3s ease-in-out infinite',
+              'rainbow-gradient': 'rainbow-gradient 6s ease-in-out infinite',
+              'listening-pulse': 'listening-pulse 1.5s infinite ease-in-out',
+              'speaking-ripple': 'speaking-ripple 1.2s infinite ease-out',
+            },
+          },
+        },
+      }
+    </script>
+    <style>
+        :root {
+            --accent-color: 139 92 246; /* violet-500 */
+        }
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.3);
+        }
+        /* Global transitions for a smoother feel */
+        button, a, input, select, textarea, [role="button"] {
+          transition: all 0.2s ease-in-out;
+        }
+        button:active, [role="button"]:active {
+            transform: scale(0.97);
+            transition-duration: 0.1s;
+        }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "@google/genai": "https://aistudiocdn.com/@google/genai@^1.17.0",
+    "firebase/": "https://aistudiocdn.com/firebase@^12.3.0/"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+  </body>
+</html>

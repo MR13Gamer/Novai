@@ -1,0 +1,7 @@
+{
+  "name": "Personal AI Assistant",
+  "description": "A premium, glassmorphism-style AI assistant UI. Features a responsive layout with a collapsible sidebar for desktop and a bottom navigation bar for mobile. Includes dynamic theming, image generation, file storage, a calendar, events with notifications, and a fully functional alarm clock.",
+  "requestFramePermissions": [
+    "microphone"
+  ]
+}
